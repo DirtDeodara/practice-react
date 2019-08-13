@@ -5,14 +5,15 @@ function Color({ name, rgb, hex }) {
  
   const colorBlock = {
     backgroundColor: '#cf1020',
-    width: '1rem',
-    height: '1rem',
+    width: '8rem',
+    height: '2rem',
     display: 'inline-block',
   };
 
   const styles = {
-    textAlign: 'center'
-  }
+    marginLeft: '45vw',
+    fontSize: '25px'
+  };
 
   return (
     <>
@@ -21,11 +22,15 @@ function Color({ name, rgb, hex }) {
         <dt>Name</dt>
         <dd>{name}</dd>
 
-        <dt>rgb</dt>
+        <dt>RGB</dt>
         <dd>{rgb ? rgb : 'unknown'}</dd>
 
-        <dt>hex</dt>
-        <dd>{hex ? hex : 'unknown'}</dd>
+        {hex && (
+        <>
+          <dt>HEX</dt>
+          <dd>{hex}</dd>
+        </>
+        )}
       </dl>
     </>
   );
