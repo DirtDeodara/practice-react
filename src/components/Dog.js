@@ -3,12 +3,16 @@ import PropTypes from 'prop-types';
 
 function Dog(props) {
 
+  const styles = {
+    textAlign: 'center'
+  };
+
   const fields = Object.keys(props)
     .map(key => {
       return (
         <>
-          <dt>{key}</dt>
-          <dd>{props[key]}</dd>
+          <dt style={styles}>{key}</dt>
+          <dd style={styles}>{props[key]}</dd>
         </>
       );
     });

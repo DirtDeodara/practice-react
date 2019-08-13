@@ -3,25 +3,29 @@ import PropTypes from 'prop-types';
 
 function Color({ name, rgb, hex }) {
  
-  const styles = {
+  const colorBlock = {
     backgroundColor: '#cf1020',
     width: '1rem',
     height: '1rem',
-    display: 'inline-block'
+    display: 'inline-block',
   };
+
+  const styles = {
+    textAlign: 'center'
+  }
 
   return (
     <>
-      <dl>
-        <div style={styles}></div>
+      <dl style={styles}>
+        <div style={colorBlock}></div>
         <dt>Name</dt>
         <dd>{name}</dd>
 
         <dt>rgb</dt>
-        <dd>{rgb}</dd>
+        <dd>{rgb ? rgb : 'unknown'}</dd>
 
         <dt>hex</dt>
-        <dd>{hex}</dd>
+        <dd>{hex ? hex : 'unknown'}</dd>
       </dl>
     </>
   );
@@ -29,8 +33,8 @@ function Color({ name, rgb, hex }) {
 
 Color.propTypes = {
   name: PropTypes.string.isRequired,
-  rgb: PropTypes.string.isRequired,
-  hex: PropTypes.string.isRequired
+  rgb: PropTypes.string,
+  hex: PropTypes.string
 };
 
 export default Color;
