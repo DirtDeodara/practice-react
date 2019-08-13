@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 function Dog(props) {
 
   const styles = {
-    textAlign: 'center'
+    marginLeft: '45vw',
+    fontSize: '25px'
   };
 
   const fields = Object.keys(props)
