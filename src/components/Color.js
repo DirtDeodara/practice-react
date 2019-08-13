@@ -17,6 +17,7 @@ function Color({ name, rgb, hex }) {
 
   return (
     <>
+      <h2 style={styles}>COLOR!</h2>
       <dl style={styles}>
         <div style={colorBlock}></div>
         <dt>Name</dt>

@@ -20,6 +20,7 @@ function Dog(props) {
 
   return (
     <dl>
+      <h2 style={styles}>DOG!</h2>
       {fields}
     </dl>
   );
