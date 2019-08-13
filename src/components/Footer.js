@@ -7,11 +7,16 @@ export default function Footer() {
     height: '50px',
     width: '100vw',
     marginTop: '20px',
+    color: 'white',
+    textAlign: 'center',
+    fontSize: '30px'
   };
 
   return (
     <>
-      <footer style={styles}></footer>
+      <footer style={styles}>
+        <p>the end.</p>
+      </footer>
     </>
   );
 
