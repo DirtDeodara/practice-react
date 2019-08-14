@@ -1,28 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Button from './Button';
 
 function Dog(props) {
+  const [count, setCount] = useState(0);
 
   const styles = {
     marginLeft: '45vw',
     fontSize: '25px'
   };
 
-  const fields = Object.keys(props)
-    .map(key => {
-      return (
-        <>
-          <dt style={styles}>{key}</dt>
-          <dd style={styles}>{props[key]}</dd>
-        </>
-      );
-    });
-
   return (
-    <dl>
-      <h2 style={styles}>DOG!</h2>
-      {fields}
-    </dl>
+    <>
+      <Button />
+      <dl style={styles}>
+        <dt>Name</dt>
+        <dd>{props.name}</dd>
+
+        <dt>Age</dt>
+        <dd>{props.age}</dd>
+
+        {props.weight && (
+          <>
+            <dt>Weight</dt>
+            <dd>{props.weight}</dd>
+          </>
+        )}
+      </dl>
+    </>
   );
 }
 
