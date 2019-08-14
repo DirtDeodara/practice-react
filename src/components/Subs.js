@@ -1,9 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Sub from './Sub';
 
 
-export default function Subs({ subsArr }) {
-
+export default function Subs() {
+  const subsArr = [
+    {
+      name: 'kimura',
+      type: 'shoulder lock'
+    },
+    {
+      name: 'RNC',
+      type: 'strangle'
+    },
+    {
+      name: 'knee Bar',
+      type: 'joint lock'
+    },
+    
+  ];
   const styles = {
     marginLeft: '45vw',
     fontSize: '25px'
@@ -12,16 +27,14 @@ export default function Subs({ subsArr }) {
   const subs = subsArr.map(sub => {
     return (
       <>
-        <p style={styles}>Name: {sub.name}</p>
-        <p style={styles}>Type: {sub.type}</p>
-        <p>.</p>
+        <Sub name={sub.name} type={sub.type} />
       </>
     );
   });
 
   return (
     <>
-      <h2 style={styles}>Submissions</h2>
+      <h2 style={styles}>SUBMISSIONS!</h2>
       {subs}
     </>
   );
@@ -30,4 +43,5 @@ export default function Subs({ subsArr }) {
 
 Subs.propTypes = {
   subsArr: PropTypes.array.isRequired,
+  colorProps: PropTypes.object
 };
